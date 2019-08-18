@@ -12,12 +12,17 @@ public struct POW {
 
     private let sha256TwiceHasher: Sha256Twice
 
-    init(sha256TwiceHasher: Sha256Twice) {
+    public init(sha256TwiceHasher: Sha256Twice) {
         self.sha256TwiceHasher = sha256TwiceHasher
     }
 }
 
 public extension POW {
+
+    func doWork(vector: Vector, done: @escaping (Int64) -> Void) {
+        doWork(seed: vector.seed, magic: vector.magic, targetNumberOfLeadingZeros: vector.zeros, done: done)
+    }
+
      func doWork(
         seed: Data,
         magic: Int32,

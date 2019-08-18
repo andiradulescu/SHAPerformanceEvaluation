@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CryptoSwift
+//import CryptoSwift
 
 public protocol DataConvertible {
     var asData: Data { get }

@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48AFA7CD2309AF8B004E24BF /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AFA7CC2309AF8B004E24BF /* CryptoSwift.framework */; };
-		48AFA7CE2309AFC3004E24BF /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AFA7CC2309AF8B004E24BF /* CryptoSwift.framework */; };
-		48B75B7B2309A5A6008FE88A /* SHAPerformanceEvaluation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B75B712309A5A6008FE88A /* SHAPerformanceEvaluation.framework */; };
+		48AFA7E82309C0B4004E24BF /* Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFA7E72309C0B4004E24BF /* Vectors.swift */; };
+		48AFA7EE2309C474004E24BF /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AFA7EC2309C45B004E24BF /* CryptoSwift.framework */; platformFilter = maccatalyst; };
+		48AFA7F02309C583004E24BF /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AFA7EC2309C45B004E24BF /* CryptoSwift.framework */; };
+		48AFA7F12309C583004E24BF /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48AFA7EC2309C45B004E24BF /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		48B75B7B2309A5A6008FE88A /* SHAPerformanceEvaluation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B75B712309A5A6008FE88A /* SHAPerformanceEvaluation.framework */; platformFilter = maccatalyst; };
 		48B75B802309A5A6008FE88A /* SHAPerformanceEvaluationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B7F2309A5A6008FE88A /* SHAPerformanceEvaluationTests.swift */; };
 		48B75B822309A5A6008FE88A /* SHAPerformanceEvaluation.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B75B742309A5A6008FE88A /* SHAPerformanceEvaluation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48B75B912309A64F008FE88A /* POW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B902309A64F008FE88A /* POW.swift */; };
@@ -27,8 +29,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		48AFA7F22309C583004E24BF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				48AFA7F12309C583004E24BF /* CryptoSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		48AFA7CC2309AF8B004E24BF /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		48AFA7E72309C0B4004E24BF /* Vectors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vectors.swift; sourceTree = "<group>"; };
+		48AFA7EC2309C45B004E24BF /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/Mac/CryptoSwift.framework; sourceTree = "<group>"; };
 		48B75B712309A5A6008FE88A /* SHAPerformanceEvaluation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SHAPerformanceEvaluation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B75B742309A5A6008FE88A /* SHAPerformanceEvaluation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHAPerformanceEvaluation.h; sourceTree = "<group>"; };
 		48B75B752309A5A6008FE88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48AFA7CD2309AF8B004E24BF /* CryptoSwift.framework in Frameworks */,
+				48AFA7F02309C583004E24BF /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B75B7B2309A5A6008FE88A /* SHAPerformanceEvaluation.framework in Frameworks */,
-				48AFA7CE2309AFC3004E24BF /* CryptoSwift.framework in Frameworks */,
+				48AFA7EE2309C474004E24BF /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +82,7 @@
 		48AFA7CB2309AF8B004E24BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				48AFA7EC2309C45B004E24BF /* CryptoSwift.framework */,
 				48AFA7CC2309AF8B004E24BF /* CryptoSwift.framework */,
 			);
 			name = Frameworks;
@@ -121,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				48B75B902309A64F008FE88A /* POW.swift */,
+				48AFA7E72309C0B4004E24BF /* Vectors.swift */,
 			);
 			path = ProofOfWork;
 			sourceTree = "<group>";
@@ -163,6 +183,7 @@
 				48B75B6D2309A5A6008FE88A /* Sources */,
 				48B75B6E2309A5A6008FE88A /* Frameworks */,
 				48B75B6F2309A5A6008FE88A /* Resources */,
+				48AFA7F22309C583004E24BF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +278,7 @@
 			files = (
 				48B75B942309A665008FE88A /* Sha256Twice.swift in Sources */,
 				48B75B912309A64F008FE88A /* POW.swift in Sources */,
+				48AFA7E82309C0B4004E24BF /* Vectors.swift in Sources */,
 				48B75B972309A694008FE88A /* DataConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +296,7 @@
 /* Begin PBXTargetDependency section */
 		48B75B7D2309A5A6008FE88A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = maccatalyst;
 			target = 48B75B702309A5A6008FE88A /* SHAPerformanceEvaluation */;
 			targetProxy = 48B75B7C2309A5A6008FE88A /* PBXContainerItemProxy */;
 		};
@@ -403,6 +426,7 @@
 		48B75B862309A5A6008FE88A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -411,7 +435,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SHAPerformanceEvaluation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -422,7 +446,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cyon.alex.SHAPerformanceEvaluation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,6 +457,7 @@
 		48B75B872309A5A6008FE88A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -439,7 +466,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SHAPerformanceEvaluation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -450,7 +477,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cyon.alex.SHAPerformanceEvaluation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,17 +492,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SHAPerformanceEvaluationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cyon.alex.SHAPerformanceEvaluationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -486,17 +516,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = SHAPerformanceEvaluationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cyon.alex.SHAPerformanceEvaluationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

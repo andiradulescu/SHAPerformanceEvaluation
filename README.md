@@ -1,6 +1,10 @@
 ### CryptoKit is slower than CrytpoSwift
 This is an example project to demonstrate that running SHA256 twice, as part of a simple [Proof-of-Work](https://en.wikipedia.org/wiki/Proof_of_work)(POW), is much slower using [CryptoKit](https://developer.apple.com/documentation/cryptokit/sha256) than [CryptoSwift](https://github.com/krzyzanowskim/CryptoSwift).
 
+### macOS
+Running the example app on your mac yields ~60% slower using CryptoKit than CryptoSwift
+
+### POW
 The POW is super simple, it performs SHA256 twice on some input data (seed), until the SHA256 twice hashing results in a digest meeting some target number of leading zeros in it.
 
 ```swift

@@ -33,16 +33,7 @@ public struct CryptoKitSha256Twice: Sha256Twice {
 }
 
 // MARK: CryptoSwift
-//public func cryptoSwiftSha256(of data: Data) -> Data {
-//    let bytes = Array<UInt8>(data)
-//    let digest = .calculate(for: bytes)
-//    return Data(digest)
-//}
-
 public struct CryptoSwiftSha256Twice: Sha256Twice {
-
-//    private let hasher: CryptoSwift.SHA2
-
     public init() {}
 }
 
