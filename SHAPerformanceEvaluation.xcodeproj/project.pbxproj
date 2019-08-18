@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		48B75B7B2309A5A6008FE88A /* SHAPerformanceEvaluation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B75B712309A5A6008FE88A /* SHAPerformanceEvaluation.framework */; };
 		48B75B802309A5A6008FE88A /* SHAPerformanceEvaluationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B7F2309A5A6008FE88A /* SHAPerformanceEvaluationTests.swift */; };
 		48B75B822309A5A6008FE88A /* SHAPerformanceEvaluation.h in Headers */ = {isa = PBXBuildFile; fileRef = 48B75B742309A5A6008FE88A /* SHAPerformanceEvaluation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48B75B8D2309A616008FE88A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 48B75B8C2309A616008FE88A /* CryptoSwift */; };
+		48B75B912309A64F008FE88A /* POW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B902309A64F008FE88A /* POW.swift */; };
+		48B75B942309A665008FE88A /* Sha256Twice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B932309A665008FE88A /* Sha256Twice.swift */; };
+		48B75B972309A694008FE88A /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B962309A694008FE88A /* DataConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,9 @@
 		48B75B7A2309A5A6008FE88A /* SHAPerformanceEvaluationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SHAPerformanceEvaluationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B75B7F2309A5A6008FE88A /* SHAPerformanceEvaluationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHAPerformanceEvaluationTests.swift; sourceTree = "<group>"; };
 		48B75B812309A5A6008FE88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48B75B902309A64F008FE88A /* POW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POW.swift; sourceTree = "<group>"; };
+		48B75B932309A665008FE88A /* Sha256Twice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sha256Twice.swift; sourceTree = "<group>"; };
+		48B75B962309A694008FE88A /* DataConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B75B8D2309A616008FE88A /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +79,7 @@
 		48B75B732309A5A6008FE88A /* SHAPerformanceEvaluation */ = {
 			isa = PBXGroup;
 			children = (
+				48B75B8E2309A61C008FE88A /* Source */,
 				48B75B742309A5A6008FE88A /* SHAPerformanceEvaluation.h */,
 				48B75B752309A5A6008FE88A /* Info.plist */,
 			);
@@ -84,6 +93,40 @@
 				48B75B812309A5A6008FE88A /* Info.plist */,
 			);
 			path = SHAPerformanceEvaluationTests;
+			sourceTree = "<group>";
+		};
+		48B75B8E2309A61C008FE88A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				48B75B952309A687008FE88A /* DataConvertible */,
+				48B75B922309A657008FE88A /* SHA */,
+				48B75B8F2309A633008FE88A /* ProofOfWork */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		48B75B8F2309A633008FE88A /* ProofOfWork */ = {
+			isa = PBXGroup;
+			children = (
+				48B75B902309A64F008FE88A /* POW.swift */,
+			);
+			path = ProofOfWork;
+			sourceTree = "<group>";
+		};
+		48B75B922309A657008FE88A /* SHA */ = {
+			isa = PBXGroup;
+			children = (
+				48B75B932309A665008FE88A /* Sha256Twice.swift */,
+			);
+			path = SHA;
+			sourceTree = "<group>";
+		};
+		48B75B952309A687008FE88A /* DataConvertible */ = {
+			isa = PBXGroup;
+			children = (
+				48B75B962309A694008FE88A /* DataConvertible.swift */,
+			);
+			path = DataConvertible;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +157,9 @@
 			dependencies = (
 			);
 			name = SHAPerformanceEvaluation;
+			packageProductDependencies = (
+				48B75B8C2309A616008FE88A /* CryptoSwift */,
+			);
 			productName = SHAPerformanceEvaluation;
 			productReference = 48B75B712309A5A6008FE88A /* SHAPerformanceEvaluation.framework */;
 			productType = "com.apple.product-type.framework";
@@ -148,6 +194,7 @@
 				TargetAttributes = {
 					48B75B702309A5A6008FE88A = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					48B75B792309A5A6008FE88A = {
 						CreatedOnToolsVersion = 11.0;
@@ -163,6 +210,9 @@
 				Base,
 			);
 			mainGroup = 48B75B672309A5A6008FE88A;
+			packageReferences = (
+				48B75B8B2309A616008FE88A /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+			);
 			productRefGroup = 48B75B722309A5A6008FE88A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -195,6 +245,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B75B942309A665008FE88A /* Sha256Twice.swift in Sources */,
+				48B75B912309A64F008FE88A /* POW.swift in Sources */,
+				48B75B972309A694008FE88A /* DataConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +310,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -274,7 +327,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -340,6 +393,7 @@
 		48B75B862309A5A6008FE88A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -363,6 +417,7 @@
 		48B75B872309A5A6008FE88A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -386,6 +441,7 @@
 		48B75B892309A5A6008FE88A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SHAPerformanceEvaluationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -403,6 +459,7 @@
 		48B75B8A2309A5A6008FE88A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SHAPerformanceEvaluationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,6 +505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48B75B8B2309A616008FE88A /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48B75B8C2309A616008FE88A /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48B75B8B2309A616008FE88A /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48B75B682309A5A6008FE88A /* Project object */;
 }
