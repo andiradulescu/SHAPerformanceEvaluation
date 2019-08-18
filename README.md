@@ -21,5 +21,8 @@ CryptoSwift version `1.0.0` has been imported into the project using Carthage.
 
 **For the same test vectors using CryptoKit is around 40 - 80% slower than CryptoSwift.**
 
+#### Optimization flags
+Currently using `Fastest, Aggressive Optimizations` and `Optimize for Speed` flags.
+
 #### Why Carthage?
 However I included the build of CryptoSwift using Carthage in Git. So you ought to be able to run it. At first I imported CryptoSwift using SPM, but runtime CryptoSwift was much slower using SPM. Maybe I did something wrong, but it seemed it did not get build using optimization flags.
