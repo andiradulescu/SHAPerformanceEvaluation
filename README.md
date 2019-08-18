@@ -6,15 +6,19 @@ The POW is super simple, it performs SHA256 twice on some input data (seed), unt
 ```swift
 let seed: Data // input
 let targetNumberOfLeadingZeros = 16
+
+// number of iterations until threshold `targetNumberOfLeadingZeros` is met.
 var nonce: Int64 = 0
+
 var powData: Data!
+
 repeat {
-	nonce += 1
-	let unhashed = seed + fourBytesFrom(int: nonce)
-	powData = sha256TwiceHasher.sha256sha256(of: unhashed)
+  nonce += 1
+  let unhashed = seed + fourBytesFrom(int: nonce)
+  powData = sha256TwiceHasher.sha256sha256(of: unhashed)
 } while powData.numberOfLeadingZeroBits < targetNumberOfLeadingZeros
 
-return nonce // number of iterations until 
+return nonce 
 ```
 
 CryptoSwift version `1.0.0` has been imported into the project using Carthage.
