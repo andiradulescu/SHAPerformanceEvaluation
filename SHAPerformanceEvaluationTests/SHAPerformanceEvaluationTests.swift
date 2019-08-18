@@ -9,32 +9,35 @@
 import XCTest
 @testable import SHAPerformanceEvaluation
 
+/// Comments about time are results from running on a 2016 Macbook Pro with maxed out hardware.
 class SHAPerformanceEvaluationTests: XCTestCase {
 
     func testCryptoSwiftFastVectors() {
-//        measure {
+        measure { // ~0.15s
             doTestCryptoSwift(vectors: vectorsFast)
-//        }
+        }
     }
 
+    // 50% slower than CryptoSwift
     func testCryptoKitFastVectors() {
-//        measure {
+        measure { // ~0.23s
             doTestCryptoKit(vectors: vectorsFast)
-//        }
+        }
     }
 
 
-        func testCryptoSwiftSlowVectors() {
-    //        measure {
-                doTestCryptoSwift(vectors: vectorsSlow)
-    //        }
+    func testCryptoSwiftSlowVectors() {
+        measure { // ~16s (`measure` runs block 10 times => ~3 min runtime)
+            doTestCryptoSwift(vectors: vectorsSlow)
         }
+    }
 
-     func testCryptoKitSlowVectors() {
-    //        measure {
-                doTestCryptoKit(vectors: vectorsSlow)
-    //        }
+    // 75% slower than CryptoSwift
+    func testCryptoKitSlowVectors() {
+        measure { // ~28s (`measure` runs block 10 times => ~5 min runtime)
+            doTestCryptoKit(vectors: vectorsSlow)
         }
+    }
 }
 
 private extension SHAPerformanceEvaluationTests {
@@ -62,7 +65,6 @@ private extension SHAPerformanceEvaluationTests {
                 magic: vector.magic,
                 targetNumberOfLeadingZeros: vector.zeros
             ) { nonce in
-                print("✅ POW => nonce: \(nonce)")
                 XCTAssertEqual(nonce, vector.expectedResultingNonce)
             }
         }
