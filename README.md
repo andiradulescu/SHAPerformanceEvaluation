@@ -24,6 +24,20 @@ POW using 'CryptoKit' took 1.204 seconds
 POW using CryptoKit is 2.52x faster
 ```
 
+Running the example app on an iPhone X, including the optimisations above, yields 1.6x faster using CryptoKit than CryptoSwift.
+```
+POW using 'CryptoSwift' took 4.244 seconds
+POW using 'CryptoKit' took 2.665 seconds
+POW using CryptoKit is 1.59x faster
+```
+
+Running the example app on the iOS Simulator, including the optimisations above, yields 1.5x faster using CryptoKit than CryptoSwift.
+```
+POW using 'CryptoSwift' took 4.541 seconds
+POW using 'CryptoKit' took 2.951 seconds
+POW using CryptoKit is 1.54x faster
+```
+
 
 ### POW
 The POW is super simple, it performs SHA256 twice on some input data (seed), until the SHA256 twice hashing results in a digest meeting some target number of leading zeros in it.

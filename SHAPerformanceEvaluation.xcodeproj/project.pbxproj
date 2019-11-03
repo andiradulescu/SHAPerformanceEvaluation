@@ -17,6 +17,13 @@
 		48B75B912309A64F008FE88A /* POW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B902309A64F008FE88A /* POW.swift */; };
 		48B75B942309A665008FE88A /* Sha256Twice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B932309A665008FE88A /* Sha256Twice.swift */; };
 		48B75B972309A694008FE88A /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B962309A694008FE88A /* DataConvertible.swift */; };
+		5BD6A5BC236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BD6A5BA236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BD6A5C5236F7C1E0074FA97 /* DataConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B962309A694008FE88A /* DataConvertible.swift */; };
+		5BD6A5C6236F7C1E0074FA97 /* Sha256Twice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B932309A665008FE88A /* Sha256Twice.swift */; };
+		5BD6A5C7236F7C1E0074FA97 /* POW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B75B902309A64F008FE88A /* POW.swift */; };
+		5BD6A5C8236F7C1E0074FA97 /* Vectors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AFA7E72309C0B4004E24BF /* Vectors.swift */; };
+		5BD6A5C9236F7C5B0074FA97 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48AFA7CC2309AF8B004E24BF /* CryptoSwift.framework */; };
+		5BD6A5CA236F7C5B0074FA97 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48AFA7CC2309AF8B004E24BF /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BD6A5CB236F7C5C0074FA97 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5BD6A5CA236F7C5B0074FA97 /* CryptoSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +74,9 @@
 		48B75B902309A64F008FE88A /* POW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POW.swift; sourceTree = "<group>"; };
 		48B75B932309A665008FE88A /* Sha256Twice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sha256Twice.swift; sourceTree = "<group>"; };
 		48B75B962309A694008FE88A /* DataConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertible.swift; sourceTree = "<group>"; };
+		5BD6A5B8236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SHAPerformanceEvaluation_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD6A5BA236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHAPerformanceEvaluation_iOS.h; sourceTree = "<group>"; };
+		5BD6A5BB236F7B5E0074FA97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +97,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BD6A5B5236F7B5E0074FA97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD6A5C9236F7C5B0074FA97 /* CryptoSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,6 +122,7 @@
 			children = (
 				48B75B732309A5A6008FE88A /* SHAPerformanceEvaluation */,
 				48B75B7E2309A5A6008FE88A /* SHAPerformanceEvaluationTests */,
+				5BD6A5B9236F7B5E0074FA97 /* SHAPerformanceEvaluation-iOS */,
 				48B75B722309A5A6008FE88A /* Products */,
 				48AFA7CB2309AF8B004E24BF /* Frameworks */,
 			);
@@ -103,6 +133,7 @@
 			children = (
 				48B75B712309A5A6008FE88A /* SHAPerformanceEvaluation.framework */,
 				48B75B7A2309A5A6008FE88A /* SHAPerformanceEvaluationTests.xctest */,
+				5BD6A5B8236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +192,15 @@
 			path = DataConvertible;
 			sourceTree = "<group>";
 		};
+		5BD6A5B9236F7B5E0074FA97 /* SHAPerformanceEvaluation-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5BD6A5BA236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.h */,
+				5BD6A5BB236F7B5E0074FA97 /* Info.plist */,
+			);
+			path = "SHAPerformanceEvaluation-iOS";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -169,6 +209,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B75B822309A5A6008FE88A /* SHAPerformanceEvaluation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BD6A5B3236F7B5E0074FA97 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD6A5BC236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +262,25 @@
 			productReference = 48B75B7A2309A5A6008FE88A /* SHAPerformanceEvaluationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5BD6A5B7236F7B5E0074FA97 /* SHAPerformanceEvaluation-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BD6A5BF236F7B5E0074FA97 /* Build configuration list for PBXNativeTarget "SHAPerformanceEvaluation-iOS" */;
+			buildPhases = (
+				5BD6A5B3236F7B5E0074FA97 /* Headers */,
+				5BD6A5B4236F7B5E0074FA97 /* Sources */,
+				5BD6A5B5236F7B5E0074FA97 /* Frameworks */,
+				5BD6A5B6236F7B5E0074FA97 /* Resources */,
+				5BD6A5CB236F7C5C0074FA97 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SHAPerformanceEvaluation-iOS";
+			productName = "SHAPerformanceEvaluation-iOS";
+			productReference = 5BD6A5B8236F7B5E0074FA97 /* SHAPerformanceEvaluation_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -230,6 +297,9 @@
 					};
 					48B75B792309A5A6008FE88A = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					5BD6A5B7236F7B5E0074FA97 = {
+						CreatedOnToolsVersion = 11.2;
 					};
 				};
 			};
@@ -250,6 +320,7 @@
 			targets = (
 				48B75B702309A5A6008FE88A /* SHAPerformanceEvaluation */,
 				48B75B792309A5A6008FE88A /* SHAPerformanceEvaluationTests */,
+				5BD6A5B7236F7B5E0074FA97 /* SHAPerformanceEvaluation-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -263,6 +334,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		48B75B782309A5A6008FE88A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BD6A5B6236F7B5E0074FA97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -288,6 +366,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				48B75B802309A5A6008FE88A /* SHAPerformanceEvaluationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BD6A5B4236F7B5E0074FA97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD6A5C5236F7C1E0074FA97 /* DataConvertible.swift in Sources */,
+				5BD6A5C6236F7C1E0074FA97 /* Sha256Twice.swift in Sources */,
+				5BD6A5C7236F7C1E0074FA97 /* POW.swift in Sources */,
+				5BD6A5C8236F7C1E0074FA97 /* Vectors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +622,72 @@
 			};
 			name = Release;
 		};
+		5BD6A5BD236F7B5E0074FA97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = ML8WQXN866;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "SHAPerformanceEvaluation-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radixdlt.SHAPerformanceEvaluation-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BD6A5BE236F7B5E0074FA97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = ML8WQXN866;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = "SHAPerformanceEvaluation-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.radixdlt.SHAPerformanceEvaluation-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -559,6 +714,15 @@
 			buildConfigurations = (
 				48B75B892309A5A6008FE88A /* Debug */,
 				48B75B8A2309A5A6008FE88A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BD6A5BF236F7B5E0074FA97 /* Build configuration list for PBXNativeTarget "SHAPerformanceEvaluation-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BD6A5BD236F7B5E0074FA97 /* Debug */,
+				5BD6A5BE236F7B5E0074FA97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

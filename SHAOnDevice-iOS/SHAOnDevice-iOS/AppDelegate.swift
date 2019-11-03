@@ -1,34 +1,18 @@
 //
 //  AppDelegate.swift
-//  SHAOnDevice
+//  SHAOnDevice-iOS
 //
-//  Created by Alexander Cyon on 2019-08-18.
-//  Copyright © 2019 Alex Cyon. All rights reserved.
+//  Created by Andrei Radulescu on 11/3/19.
+//  Copyright © 2019 Radix DLT. All rights reserved.
 //
 
-import Cocoa
-import SwiftUI
-import SHAPerformanceEvaluation
+import UIKit
+import SHAPerformanceEvaluation_iOS
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: NSWindow!
-
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 480, height: 300),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false)
-        window.center()
-        window.setFrameAutosaveName("Main Window")
-
-        window.contentView = NSHostingView(rootView: ContentView())
-
-        window.makeKeyAndOrderFront(nil)
-
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let slowestVector = vectorsSlow[0]
         powInBackground(hasher: CryptoSwiftSha256Twice(), vector: slowestVector) { [weak self] timeForCryptoSwift in
             self?.powInBackground(hasher: CryptoKitSha256Twice(), vector: slowestVector) { timeForCryptoKit in
@@ -36,11 +20,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 print(String(format: "POW using CryptoKit is %.2fx faster", rate))
             }
         }
+        return true
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    // MARK: UISceneSession Lifecycle
+
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        // Called when a new scene session is being created.
+        // Use this method to select a configuration to create the new scene with.
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
+
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+        // Called when the user discards a scene session.
+        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+
     private let dispatchQueue = DispatchQueue(
           label: "POW",
           qos: DispatchQoS(qosClass: .background, relativePriority: 1),
@@ -50,7 +46,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       )
 
 }
-
 
 private extension AppDelegate {
     func powInBackground(hasher sha256TwiceHasher: Sha256Twice, vector: Vector, done: ((CFAbsoluteTime) -> Void)? = nil) {
