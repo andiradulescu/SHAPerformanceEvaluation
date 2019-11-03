@@ -35,15 +35,25 @@ public extension POW {
 
         var nonce: Int64 = 0
         let base: Data = toFourBigEndianBytes(int32: magic) + seed
-        var powData: Data!
+        var powData: [UInt8]
         repeat {
             nonce += 1
             let unhashed = base + toEightBigEndianBytes(int64: nonce)
             powData = sha256TwiceHasher.sha256sha256(of: unhashed)
-        } while powData.numberOfLeadingZeroBits < targetNumberOfLeadingZeros
+        } while numberOfLeadingZeroBits(byteArray: powData) < targetNumberOfLeadingZeros
 
         done(nonce)
     }
+}
+
+private func numberOfLeadingZeroBits(byteArray: [UInt8]) -> Int {
+    let bitsPerByte = 8
+    guard let index = byteArray.firstIndex(where: { $0 != 0 }) else {
+        return byteArray.count * bitsPerByte
+    }
+
+    // count zero bits in byte at index `index`
+    return index * bitsPerByte + byteArray[index].leadingZeroBitCount
 }
 
 // MARK: Endianess swap
